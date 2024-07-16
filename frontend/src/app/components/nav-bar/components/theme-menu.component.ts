@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-theme-menu',
@@ -46,10 +46,24 @@ import { Component, Input, ViewChild } from '@angular/core';
   `,
   styles: ``,
 })
-export class ThemeMenuComponent {
+export class ThemeMenuComponent implements OnInit {
+  isDarkTheme = false;
+  theme = 'light';
+
+  ngOnInit(): void {
+    const storedTheme = localStorage.getItem('my-theme');
+    console.log(storedTheme);
+
+    this.isDarkTheme = storedTheme == 'dark' ? true : false;
+    this.theme = this.isDarkTheme ? 'dark' : 'light';
+  }
+
   onChange() {
     const element = document.getElementById('theme') as HTMLInputElement;
 
     localStorage.setItem('my-theme', element.checked ? 'dark' : 'light');
+    const storedTheme = localStorage.getItem('my-theme');
+
+    this.theme = storedTheme ? storedTheme : 'light';
   }
 }
