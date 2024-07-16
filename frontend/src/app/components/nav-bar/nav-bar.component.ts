@@ -34,18 +34,22 @@ import { NavbarLinks } from './models';
 export class NavBarComponent {
   links = signal<NavbarLinks>([
     {
+      label: 'Home',
+      link: '/home',
+    },
+    {
       label: 'Students',
       link: '/students',
     },
-    {
-      label: 'Taco Street',
-      link: 'ts.com',
-      children: [
-        {
-          label: 'Locations',
-          link: 'locations.com',
-        },
-      ],
-    },
+    // {
+    //   label: 'Taco Street',
+    //   link: 'ts.com',
+    //   children: [
+    //     {
+    //       label: 'Locations',
+    //       link: 'locations.com',
+    //     },
+    //   ],
+    // },
   ]);
 }

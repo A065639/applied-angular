@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { NavbarLink, NavItem } from '../models';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-link-item',
   standalone: true,
-  imports: [],
-  template: ` <li><a>Item 1</a></li> `,
+  imports: [RouterLink],
+  template: `
+    <li>
+      <a [routerLink]="link().link">{{ link().label }}</a>
+    </li>
+  `,
   styles: ``,
 })
-export class LinkItemComponent {}
+export class LinkItemComponent {
+  link = input.required<NavbarLink>();
+}
