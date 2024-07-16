@@ -1,16 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { UserDataService } from '../../../state/services/user-data.service';
 
 @Component({
   selector: 'app-user-menu',
   standalone: true,
   imports: [AsyncPipe],
-  template: ` <div class="btn">{{ (user$ | async)?.sub }}</div> `,
+  template: ` <div class="btn"></div> `,
   styles: ``,
 })
 export class UserMenuComponent {
-  client = inject(HttpClient);
+  client = inject(UserDataService);
 
-  user$ = this.client.get<{ sub: string }>('/api/user');
+  user$ = this.client.getUser();
 }

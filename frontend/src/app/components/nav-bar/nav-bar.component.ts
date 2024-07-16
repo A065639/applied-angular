@@ -17,7 +17,7 @@ import { NavItems } from './models';
   template: `
     <div class="navbar bg-base-100">
       <div class="navbar-start">
-        <app-side-menu />
+        <app-side-menu [listOfLinks]="links()" />
         <a class="btn btn-ghost text-xl">Help Desk</a>
       </div>
       <div class="navbar-center hidden lg:flex">
