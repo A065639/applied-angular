@@ -41,15 +41,27 @@ export class NavBarComponent {
       label: 'Students',
       link: '/students',
     },
-    // {
-    //   label: 'Taco Street',
-    //   link: 'ts.com',
-    //   children: [
-    //     {
-    //       label: 'Locations',
-    //       link: 'locations.com',
-    //     },
-    //   ],
-    // },
+    {
+      label: 'Taco Street',
+      children: [
+        {
+          label: 'Link 1',
+          link: 'www.maps.google.com',
+        },
+        {
+          label: 'Link 2 (nested)',
+          children: [
+            {
+              label: 'Link 1',
+              link: 'www.maps.google.com',
+            },
+          ],
+        },
+        {
+          label: 'Link 3',
+          link: 'www.maps.google.com',
+        },
+      ],
+    },
   ]);
 }
