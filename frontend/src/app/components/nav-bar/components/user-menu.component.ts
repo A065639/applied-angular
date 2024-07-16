@@ -7,7 +7,15 @@ import { UserFeature } from '../../../state/user-feature';
   selector: 'app-user-menu',
   standalone: true,
   imports: [AsyncPipe],
-  template: ` <div class="btn">{{ user() }}</div> `,
+  template: `
+    <div class="btn">
+      @if(user() === ''){
+      <span class="loading loading-infinity loading-md"></span>
+      } @else {
+      {{ user() }}
+      }
+    </div>
+  `,
   styles: ``,
 })
 export class UserMenuComponent {

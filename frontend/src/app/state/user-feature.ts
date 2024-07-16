@@ -3,7 +3,7 @@ import { UserActions } from './actions';
 import { User } from './models';
 
 const initialState: User = {
-  sub: 'Dummy User',
+  sub: '',
 };
 
 export const UserFeature = createFeature({
