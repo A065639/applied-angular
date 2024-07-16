@@ -1,4 +1,5 @@
-import { createFeature, createReducer } from '@ngrx/store';
+import { createFeature, createReducer, on } from '@ngrx/store';
+import { UserActions } from './actions';
 import { User } from './models';
 
 const initialState: User = {
@@ -7,5 +8,8 @@ const initialState: User = {
 
 export const UserFeature = createFeature({
   name: 'User Feature',
-  reducer: createReducer(initialState),
+  reducer: createReducer(
+    initialState,
+    on(UserActions.userLoaded, (_, action) => action.payload)
+  ),
 });

@@ -1,16 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { UserDataService } from '../../../state/services/user-data.service';
+import { Store } from '@ngrx/store';
+import { UserFeature } from '../../../state/user-feature';
 
 @Component({
   selector: 'app-user-menu',
   standalone: true,
   imports: [AsyncPipe],
-  template: ` <div class="btn"></div> `,
+  template: ` <div class="btn">{{ user() }}</div> `,
   styles: ``,
 })
 export class UserMenuComponent {
-  client = inject(UserDataService);
+  // client = inject(UserDataService);
+  // user$ = this.client.getUser();
 
-  user$ = this.client.getUser();
+  store = inject(Store);
+  user = this.store.selectSignal(UserFeature.selectSub);
 }
