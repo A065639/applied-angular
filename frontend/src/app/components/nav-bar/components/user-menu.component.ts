@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <a class="btn">Button</a>
+
+    <a class="btn">Click Me For Tacos</a>
+
   `,
   styles: ``
 })

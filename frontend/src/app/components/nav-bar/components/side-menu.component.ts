@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
         <li>
           <a>Parent</a>
           <ul class="p-2">
-            <li><a>Submenu 1</a></li>
+            <li><a>Tacos</a></li>
             <li><a>Submenu 2</a></li>
           </ul>
         </li>
