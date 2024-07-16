@@ -10,6 +10,7 @@ import { LinkItemChildrenComponent } from './link-item-children.component';
   imports: [RouterLink, LinkItemComponent, LinkItemChildrenComponent],
   template: `
     <ul class="menu menu-horizontal px-1">
+      <!-- TODO: This menu should not know about link children, that should be pushed to the app-link-item -->
       @for(link of listOfLinks(); track $index) { @if(link.children){
       <app-link-item-children [link]="link" />
       } @else {
