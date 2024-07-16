@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-theme-menu',
@@ -23,8 +23,10 @@ import { Component } from '@angular/core';
         />
       </svg>
       <input
+        id="theme"
         type="checkbox"
-        value="synthwave"
+        value="dark"
+        (change)="onChange()"
         class="toggle theme-controller"
       />
       <svg
@@ -44,4 +46,10 @@ import { Component } from '@angular/core';
   `,
   styles: ``,
 })
-export class ThemeMenuComponent {}
+export class ThemeMenuComponent {
+  onChange() {
+    const element = document.getElementById('theme') as HTMLInputElement;
+
+    localStorage.setItem('my-theme', element.checked ? 'dark' : 'light');
+  }
+}

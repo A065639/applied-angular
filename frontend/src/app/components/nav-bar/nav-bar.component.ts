@@ -24,7 +24,7 @@ import { NavItems } from './models';
         <app-main-menu [listOfLinks]="links()" />
       </div>
       <div class="navbar-end">
-        <!-- <app-theme-menu /> -->
+        <app-theme-menu style="padding-right: 10px;" />
         <app-user-menu />
       </div>
     </div>
