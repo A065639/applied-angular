@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { NavbarLinks } from '../models';
+import { NavItems } from '../models';
 import { RouterLink } from '@angular/router';
 import { LinkItemComponent } from './link-item.component';
 import { LinkItemChildrenComponent } from './link-item-children.component';
@@ -21,5 +21,5 @@ import { LinkItemChildrenComponent } from './link-item-children.component';
 })
 export class MainMenuComponent {
   // New way to provide inputs
-  listOfLinks = input.required<NavbarLinks>();
+  listOfLinks = input.required<NavItems>();
 }

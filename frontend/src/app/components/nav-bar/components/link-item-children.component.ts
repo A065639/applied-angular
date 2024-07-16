@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { NavbarLink, NavItem } from '../models';
+import { NavItem } from '../models';
 import { LinkItemComponent } from './link-item.component';
 
 @Component({
@@ -27,5 +27,5 @@ import { LinkItemComponent } from './link-item.component';
   styles: ``,
 })
 export class LinkItemChildrenComponent {
-  link = input.required<NavbarLink>();
+  link = input.required<NavItem>();
 }

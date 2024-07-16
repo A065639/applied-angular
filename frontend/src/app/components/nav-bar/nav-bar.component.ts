@@ -3,7 +3,7 @@ import { SideMenuComponent } from './components/side-menu.component';
 import { UserMenuComponent } from './components/user-menu.component';
 import { MainMenuComponent } from './components/main-menu.component';
 import { ThemeMenuComponent } from './components/theme-menu.component';
-import { NavbarLinks } from './models';
+import { NavItems } from './models';
 
 @Component({
   selector: 'app-nav-bar',
@@ -32,7 +32,7 @@ import { NavbarLinks } from './models';
   styles: ``,
 })
 export class NavBarComponent {
-  links = signal<NavbarLinks>([
+  links = signal<NavItems>([
     {
       label: 'Home',
       link: '/home',
