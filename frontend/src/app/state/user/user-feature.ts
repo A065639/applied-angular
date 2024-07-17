@@ -15,8 +15,4 @@ export const UserFeature = createFeature({
   extraSelectors: ({ selectSub }) => ({
     selectUserLoaded: () => createSelector(selectSub, (s) => s !== ''),
   }),
-
-  // extraSelectors: (state) => ({
-  //   selectUserLoaded: () => createSelector(selectSub, (s) => s !== ''),
-  // }),
 });
