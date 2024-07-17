@@ -49,7 +49,7 @@ export class NavBarComponent {
           link: 'www.maps.google.com',
         },
         {
-          label: 'Link 2 (nested)',
+          label: 'Link 2',
           children: [
             {
               label: 'Link 1',

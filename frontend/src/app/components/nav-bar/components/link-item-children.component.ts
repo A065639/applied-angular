@@ -14,11 +14,12 @@ import { LinkItemComponent } from './link-item.component';
         @if(link().children){
         <ul class="p-2">
           @for(childlink of link().children; track $index) {
+          @if(childlink.children){
+          <app-link-item-children [link]="childlink" />
+          } @else {
 
-          <!-- TODO: Do we need to support lower level nested children? -->
-          <!-- TODO: Will require changes to the model to be all NavbarLinks based to know about children -->
           <app-link-item [link]="childlink" />
-          }
+          } }
         </ul>
         }
       </details>
