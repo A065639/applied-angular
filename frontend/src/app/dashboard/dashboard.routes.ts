@@ -7,6 +7,7 @@ import { inject } from '@angular/core';
 import { provideState, Store } from '@ngrx/store';
 import { UserFeature } from '../state/user/user-feature';
 import { UserSoftwareFeature } from './state/reducers/user-software.feature';
+import { EntitleSoftwareEffect } from './state/effects/software-effect';
 
 // Allows dashboard to be separate and isolated
 export const DASHBOARD_ROUTES: Routes = [
@@ -16,7 +17,7 @@ export const DASHBOARD_ROUTES: Routes = [
 
     providers: [
       provideState(UserSoftwareFeature),
-      provideEffects(DashboardNavigationEffect),
+      provideEffects(DashboardNavigationEffect, EntitleSoftwareEffect),
     ],
     component: DashboardComponent,
     children: [
