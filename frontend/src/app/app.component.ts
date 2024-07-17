@@ -20,15 +20,5 @@ import { UserFeature } from './state/user/user-feature';
 export class AppComponent {
   constructor(store: Store, router: Router) {
     store.dispatch(UserActions.getUser());
-
-    const userLoaded = store.selectSignal(UserFeature.selectUserLoaded);
-
-    effect(() => {
-      if (userLoaded()) {
-        if (router.url == '/') {
-          router.navigateByUrl('/dashboard');
-        }
-      }
-    });
   }
 }

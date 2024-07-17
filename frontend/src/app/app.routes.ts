@@ -1,9 +1,6 @@
-import { CanActivateFn, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { StudentsComponent } from './students/students.component';
 import { WelcomeComponent } from './components/welcome.component';
-import { Store } from '@ngrx/store';
-import { inject } from '@angular/core';
-import { UserFeature } from './state/user/user-feature';
 
 export const routes: Routes = [
   {
@@ -26,17 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    // You cannot go here until we have a user loaded
-    canActivate: [userIsLoadedGuard()],
     loadChildren: () =>
       import('./dashboard/dashboard.routes').then((r) => r.DASHBOARD_ROUTES),
   },
 ];
-
-function userIsLoadedGuard(): CanActivateFn {
-  return () => {
-    const store = inject(Store);
-    const loaded = store.selectSignal(UserFeature.selectUserLoaded);
-    return loaded();
-  };
-}
