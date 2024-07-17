@@ -6,8 +6,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterOutlet],
   template: `
-    <h1>Welcome to the Dashboard</h1>
+    <h1>Dashboard</h1>
     <a routerLink="mock">See the mock</a>
+
+    <div class="divider">MOCK INFORMATION</div>
+
     <router-outlet />
   `,
   styles: ``,
