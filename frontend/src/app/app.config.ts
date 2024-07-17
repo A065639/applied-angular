@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withDebugTracing } from '@angular/router';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { loadUser } from './state/user/get-user.effect';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    provideRouter(routes, withDebugTracing()), // NOTES: Helps provide some extra information if routing is not working
     provideHttpClient(),
     provideStore(),
     provideState(UserFeature),
