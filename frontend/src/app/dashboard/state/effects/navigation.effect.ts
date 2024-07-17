@@ -4,6 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserActions } from '../../../state/user/actions';
 import { tap } from 'rxjs';
 
+// This will redirect the user back to this page after a refresh once the user is loaded
 @Injectable({ providedIn: 'root' })
 export class DashboardNavigationEffect {
   navigateWhenUserLoaded$ = createEffect(
