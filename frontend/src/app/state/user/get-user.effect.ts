@@ -1,8 +1,8 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { UserDataService } from './services/user-data.service';
 import { inject } from '@angular/core';
 import { UserActions } from './actions';
 import { map, switchMap } from 'rxjs';
+import { UserDataService } from '../services/user-data.service';
 
 // When you tell me to load the user, go to the API, when complete return user
 

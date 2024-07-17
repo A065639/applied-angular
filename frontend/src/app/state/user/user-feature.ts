@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { UserActions } from './actions';
-import { User } from './models';
+import { User } from '../models';
 
 const initialState: User = {
   sub: '',

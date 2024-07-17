@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { UserFeature } from '../../../state/user-feature';
+import { UserFeature } from '../../../state/user/user-feature';
 
 @Component({
   selector: 'app-user-menu',
