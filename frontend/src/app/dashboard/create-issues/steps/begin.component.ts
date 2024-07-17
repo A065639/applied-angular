@@ -1,6 +1,8 @@
+/* eslint-disable @angular-eslint/template/interactive-supports-focus */
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserSoftwareFeature } from '../../state/reducers/user-software.feature';
+import { SoftwareListActions } from '../../state/actions/list.actions';
 
 @Component({
   selector: 'app-begin',
@@ -18,8 +20,15 @@ import { UserSoftwareFeature } from '../../state/reducers/user-software.feature'
               <div>
                 <div>
                   <label class="input input-bordered flex items-center gap-2">
-                    <input type="text" class="grow" placeholder="Search" />
-                    <span class="badge badge-info">?</span>
+                    <input
+                      #taco
+                      type="text"
+                      class="grow"
+                      placeholder="Search"
+                    />
+                    <span (click)="filter(taco.value)" class="badge badge-info"
+                      >?</span
+                    >
                   </label>
                 </div>
                 <table class="table">
@@ -42,9 +51,8 @@ import { UserSoftwareFeature } from '../../state/reducers/user-software.feature'
                         item.name
                       }}
                     </tr>
-                    // Be carefule using the empty, may only be empty while
-                    awaiting API response } } @empty {
-                    <p>You have no software.</p>
+                    } } @empty {
+                    <p>No software matches your filter.</p>
                     }
                   </tbody>
                 </table>
@@ -74,5 +82,9 @@ import { UserSoftwareFeature } from '../../state/reducers/user-software.feature'
 export class BeginComponent {
   // The # sign makes the variable private
   #store = inject(Store);
-  software = this.#store.selectSignal(UserSoftwareFeature.selectList);
+  software = this.#store.selectSignal(UserSoftwareFeature.selectFilteredList);
+
+  filter(what: string) {
+    this.#store.dispatch(SoftwareListActions.listFilteredBy({ payload: what }));
+  }
 }
