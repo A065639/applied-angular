@@ -38,7 +38,7 @@ export const UserSoftwareFeature = createFeature({
         if (filter === null) {
           return list;
         }
-        return list.filter((i) => i.name.includes(filter));
+        return list.filter((i) => i.name.includes(filter)); // TODO: Add sorting
       }
     ),
   }),

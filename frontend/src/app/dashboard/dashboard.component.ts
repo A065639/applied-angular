@@ -12,7 +12,7 @@ import { SoftwareListActions } from './state/actions/list.actions';
     <h1>Dashboard</h1>
     <a routerLink="mock">See the mock</a>
     <a routerLink="create-issue">Create Issue</a>
-    <app-begin />
+    <!-- <app-begin /> -->
 
     <div class="divider">MOCK INFORMATION</div>
     <router-outlet />
