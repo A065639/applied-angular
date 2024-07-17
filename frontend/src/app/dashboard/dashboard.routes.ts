@@ -4,15 +4,20 @@ import { MockupComponent } from './mockup/mockup.component';
 import { provideEffects } from '@ngrx/effects';
 import { DashboardNavigationEffect } from './state/effects/navigation.effect';
 import { inject } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { provideState, Store } from '@ngrx/store';
 import { UserFeature } from '../state/user/user-feature';
+import { UserSoftwareFeature } from './state/reducers/user-software.feature';
 
 // Allows dashboard to be separate and isolated
 export const DASHBOARD_ROUTES: Routes = [
   {
     path: '',
     canActivateChild: [userIsLoadedGuard()],
-    providers: [provideEffects(DashboardNavigationEffect)],
+
+    providers: [
+      provideState(UserSoftwareFeature),
+      provideEffects(DashboardNavigationEffect),
+    ],
     component: DashboardComponent,
     children: [
       {
