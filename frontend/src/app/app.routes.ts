@@ -21,4 +21,9 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.routes').then((r) => r.DASHBOARD_ROUTES),
+  },
 ];

@@ -42,6 +42,10 @@ export class NavBarComponent {
       link: '/students',
     },
     {
+      label: 'Dashboard',
+      link: '/dashboard',
+    },
+    {
       label: 'Taco Street',
       children: [
         {
