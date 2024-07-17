@@ -21,5 +21,5 @@ import { UserFeature } from '../../../state/user/user-feature';
 export class UserMenuComponent {
   store = inject(Store);
   user = this.store.selectSignal(UserFeature.selectSub);
-  userLoaded = this.store.selectSignal(UserFeature.selectUserLoaded());
+  userLoaded = this.store.selectSignal(UserFeature.selectUserLoaded);
 }

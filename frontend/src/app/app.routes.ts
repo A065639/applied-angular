@@ -36,7 +36,7 @@ export const routes: Routes = [
 function userIsLoadedGuard(): CanActivateFn {
   return () => {
     const store = inject(Store);
-    const loaded = store.selectSignal(UserFeature.selectUserLoaded());
+    const loaded = store.selectSignal(UserFeature.selectUserLoaded);
     return loaded();
   };
 }

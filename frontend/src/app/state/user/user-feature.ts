@@ -13,6 +13,6 @@ export const UserFeature = createFeature({
     on(UserActions.userLoaded, (_, action) => action.payload)
   ),
   extraSelectors: ({ selectSub }) => ({
-    selectUserLoaded: () => createSelector(selectSub, (s) => s !== ''),
+    selectUserLoaded: createSelector(selectSub, (s) => s !== ''),
   }),
 });
